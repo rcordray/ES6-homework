@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="client.js"></script>
+    <title>ES6 in the house</title>
+</head>
+
+<body>
+    <h1>Console Logged</h1>
+    <script>
+        class BasketballGame {
+            constructor(gameStart) {
+                this.points = gameStart;
+            }
+            firstQ(pointsScored) {
+                this.points += pointsScored;
+                console.log('Gettin Buckets: I got you for ' + pointsScored + ' points!' + " Total Points: " + this.points);
+
+            }
+            secondQ(pointsScored) {
+                this.points += pointsScored;
+                console.log('More Buckets: Worked you out for ' + pointsScored + ' points!' + " Total Points: " + this.points);
+
+            }
+            thirdQ(pointsScored) {
+                this.points += pointsScored;
+                console.log('Easy Buckets: Time and again, this time for ' + pointsScored + ' points!' + " Total Points: " + this.points);
+
+            }
+            fourthQ(pointsScored) {
+                this.points += pointsScored;
+                console.log('I don\'t even have to play! ' + 'Total Points: ' + this.points);
+
+            }
+        }
+
+        class BasketballPlayer extends BasketballGame {
+            constructor(gameStart) {
+                super(gameStart);
+            }
+        }
+
+        let IGetBuckets = new BasketballPlayer(0);
+
+        IGetBuckets.firstQ(14);
+        IGetBuckets.secondQ(10);
+        IGetBuckets.thirdQ(20);
+        IGetBuckets.fourthQ(2);
+
+        class HomeTeam extends BasketballGame {
+            constructor(gameStart, homeScore) {
+                super(gameStart);
+                this.homeScore = homeScore;
+            }
+        }
+
+        /*HomeTeam {
+            points,
+            firstQ()
+            
+            homeScore // kinda unnecessary
+
+            name,
+            number,
+            city,
+        }*/
+
+        class AwayTeam extends BasketballGame {
+            constructor(gameStart, awayScore) {
+                super(gameStart);
+                this.awayScore = awayScore;
+            }
+        }
+
+        let MatthewsMets = new HomeTeam(0, 0);
+        console.log(MatthewsMets);
+
+        let HiacRoyals = new AwayTeam(0, 0);
+        console.log(HiacRoyals);
+
+        MatthewsMets.firstQ(31);
+        HiacRoyals.firstQ(28);
+
+        console.log(MatthewsMets);
+        console.log(HiacRoyals);
+    </script>
+</body>
+
+</html>
